@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor de Temperatura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            text-align: center;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+        }
+
+        .temperature-display {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff5722;
+            margin: 20px 0;
+        }
+
+        button {
+            background-color: #2196f3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #1976d2;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sensor de Temperatura</h1>
+        <div class="temperature-display" id="temperature">-- °C</div>
+        <button onclick="updateTemperature()">Actualizar Temperatura</button>
+        <footer>
+            <p>Conectado a la red de automatización</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simula recibir datos desde un dispositivo físico
+        function updateTemperature() {
+            // Aquí podrías integrar con tu dispositivo o API
+            const newTemperature = (Math.random() * 10 + 20).toFixed(2); // Simula una nueva temperatura
+            document.getElementById('temperature').textContent = `${newTemperature} °C`;
+        }
+
+        // Actualización automática cada 10 segundos
+        setInterval(updateTemperature, 10000);
+    </script>
+</body>
+</html>
